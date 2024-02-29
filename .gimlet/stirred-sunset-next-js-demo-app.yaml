@@ -12,7 +12,7 @@ values:
 
     npm install
     npm run build
-  builtAssets: build/
-  gitCloneUrl: https://github.com/gimlet-io/reactjs-test-app.git
+  builtAssets: .next/static
+  gitCloneUrl: https://github.com/YoucefGuichi/next-js-demo-app.git
   gitRepository: YoucefGuichi/next-js-demo-app
   gitSha: '{{ .SHA }}'
