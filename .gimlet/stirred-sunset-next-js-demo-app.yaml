@@ -1,0 +1,23 @@
+app: next-js-demo-app
+env: stirred-sunset
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: static-site
+  version: 0.64.0
+values:
+  buildImage: node:latest
+  buildScript: |-
+    # !/usr/bin/env bash
+
+    npm install
+    npm run build
+  builtAssets: out/
+  gitCloneUrl: https://github.com/YoucefGuichi/next-js-demo-app.git
+  gitRepository: YoucefGuichi/next-js-demo-app
+  gitSha: '{{ .SHA }}'
+  ingress:
+    annotations: {}
+    host: ""
+    path: /
+    tlsEnabled: false
