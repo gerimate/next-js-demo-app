@@ -1,6 +1,15 @@
+const withMarkdoc = require('@markdoc/next.js')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',
-};
+  reactStrictMode: true,
+  // output: 'export',
+  output: "standalone",
+  pageExtensions: ['js', 'jsx', 'md'],
+}
 
-export default nextConfig;
+const withPlugins = require('next-compose-plugins');
+
+module.exports = withPlugins([
+  withMarkdoc(),
+], nextConfig);
